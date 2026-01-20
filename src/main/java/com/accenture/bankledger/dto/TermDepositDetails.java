@@ -1,5 +1,6 @@
 package com.accenture.bankledger.dto;
 
+import com.accenture.bankledger.dto.validator.ValidDate;
 import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
@@ -19,17 +20,11 @@ public class TermDepositDetails {
     private int termMonths;
 
     @NotBlank
-    @Pattern(
-            regexp = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$",
-            message = "Date must be in dd/MM/yyyy format"
-    )
+    @ValidDate
     private String effectiveDate;
 
     @NotBlank
-    @Pattern(
-            regexp = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$",
-            message = "Date must be in dd/MM/yyyy format"
-    )
+    @ValidDate
     private String expiryDate;
 
     public TermDepositDetails() {

@@ -1,7 +1,8 @@
 package com.accenture.bankledger.dto;
 
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 public class TermDepositMaturityDetails {
 
@@ -9,10 +10,8 @@ public class TermDepositMaturityDetails {
     private String accountName;
 
     @NotBlank
-    @Pattern(
-            regexp = "^[0-9]{6,9}$",
-            message = "Must contain only numbers and be 6 to 9 digits long"
-    )
+    @Size(min = 6, max = 9)
+    @Digits(integer = 9, fraction = 0)
     private String accountNumber;
 
     public TermDepositMaturityDetails() {

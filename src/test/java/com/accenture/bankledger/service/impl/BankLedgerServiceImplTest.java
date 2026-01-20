@@ -20,7 +20,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @ExtendWith(MockitoExtension.class)
-public class BankLedgerServiceImplTest {
+class BankLedgerServiceImplTest {
 
     @Mock
     private BankLedgerRepository bankLedgerRepository;
